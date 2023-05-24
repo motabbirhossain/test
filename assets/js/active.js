@@ -33,7 +33,7 @@ Author: Theme Junction
             animation: 'slide', // Fade, slide, none
             animationInSpeed: 300, // Animation in speed (ms)
             animationOutSpeed: 300, // Animation out speed (ms)
-            scrollText: '<i class="fal fa-angle-up"></i>', // Text for element
+            scrollText: '<i class="fa-solid fa-angle-up"></i>', // Text for element
             activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
         });
         /*==========================
