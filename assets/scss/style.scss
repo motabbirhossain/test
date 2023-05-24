@@ -1,0 +1,38 @@
+/*
+    Template:  ImmiPress - Solution & Information HTML Template
+    Author: Theme Junction
+    Author URI: 
+    Description: 
+    Version: 1.0.0
+*/
+
+// BASIC
+@import 'basic';
+
+//MIXIN
+@import 'variables';
+
+//TYPOGRAPHY
+@import 'typography';
+
+// MIX
+@import 'mix';
+
+// HELPER
+@import 'helper';
+
+//Button 
+@import 'btn';
+
+/* ----------------------------------
+    Template Section Styles
+ ------------------------------------*/
+
+//Menu - Header Section 
+@import 'header';
+
+// Hero Slide - Section 
+@import 'hero';
+
+// // Section Title - Heading 
+// @import 'section';

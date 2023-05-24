@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------------
+  Template Default Button, Input Styles - Value Change with Your's Need
+-------------------------------------------------------------------- */
+.btn {
+    font-family: $heading-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    display: inline-block;
+    @include transition(.4s);
+}
+.btn:focus{
+ box-shadow: none;
+}
+.theme-btn {
+  color: $white;
+  @extend .btn;    
+  padding: 15px 35px;
+  background-color:$secondary;
+  border-radius: 5px;
+  &:hover {
+    background: $primary !important;
+  }
+}

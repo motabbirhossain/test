@@ -1,0 +1,401 @@
+/* ----------------------------------
+	Header Section Styles
+ ------------------------------------ */
+
+header{
+    width: 100%;
+    z-index: 999;
+    /* ----top header------ */
+    .header-top{
+        position: relative;
+        width: 100%;
+        height: 55px;
+        background-color: $primary;
+        overflow: hidden;
+        &::after{
+            clear: both;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            z-index: 6;
+            left: 0;
+            width: 196px;
+            height: 26px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+            background: #FFFFFF;
+            @media (max-width:1550px) {
+                display: none;
+            }
+           }
+           &::before{
+            z-index: 6;
+            content: '';
+            clear: both;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 196px;
+            height: 26px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+            background: #FFFFFF;
+            @media (max-width:1550px) {
+                display: none;
+            }
+           }
+        .top-left-header{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center !important;
+        }
+       .location-line{
+            position: relative;
+            padding: 0 20px;
+            a{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: $white;
+                i{
+                    margin-right: 7px;
+                }
+            }
+            @include borderight;
+       }
+       .search-bar{
+            position: relative;
+            padding: 0 20px;
+            input[type="search"], input[type="submit"], button{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: $white;
+            }
+            ::placeholder{
+                color: $white !important;
+                font-family: $body-font;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+            }
+            @include borderight;
+       }
+       .timeline{
+            position: relative;
+            padding: 0 20px;
+            a{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: $white;
+                i{
+                    margin-right: 7px;
+                }
+            }
+            position: relative;
+            @include borderight;
+       }
+       .icon-right{
+            position: relative;
+            padding: 0 20px;
+            a{
+                font-size: 16px;
+                color: $white;
+                padding: 0px 8px;
+                @include transition(0.4s);
+                &:hover{
+                    color: $secondary;
+                }
+            }
+            @include borderight;
+       }
+       .support{
+            a{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: $white;
+                &:first-child{
+                    padding-right: 10px;
+                    @include border;
+                }
+                &:last-child{
+                    padding-left: 10px;
+                }
+                @include transition(0.4s);
+                &:hover{
+                    color: $secondary;
+                }
+            }
+       }
+    }
+    /* ----main header------ */
+    .main-header-wrapper{
+        padding: 25px 0px;
+        .main-menu{
+            // @media (max-width:1360px) {
+            //     display: none;
+            // }
+            ul{
+                >li{
+                    margin: 0px 20px;
+                    @media (max-width:1600px) {
+                        margin: 0px 10px;
+                    }
+                    @media (max-width:1320px) {
+                        margin: 0px 10px;
+                    }
+                    position: relative;
+                    >a{
+                        padding: 0px 5px;
+                        position: relative;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 26px;
+                        color: #233152;
+                        &::after{
+                            @include transition(0.3s);
+                            position: absolute;
+                            clear: both;
+                            display: block;
+                            content: '';
+                            width: 0%;
+                            height: 1px;
+                            background-color: $secondary;
+                            left: 0%;
+                            top: 0%;
+                            z-index: 5;
+                        }
+                        &::before{
+                            @include transition(0.3s);
+                            position: absolute;
+                            clear: both;
+                            display: block;
+                            content: '';
+                            width: 0%;
+                            height: 1px;
+                            background-color: $secondary;
+                            right: 0%;
+                            bottom: 0%;
+                            z-index: 5;
+                        }
+                    }
+                    > ul {
+                        position: absolute;
+                        top: 100%;
+                        width: 200px;
+                        background-color:$white;
+                        left: 0;
+                        z-index: 999;
+                        box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: translateY(40px);
+                        transition: all .5s ease-in-out;
+                        padding: 10px 0px;
+                        
+                        li {
+                            display: block;
+                            margin: 0px 0px;
+                            a { 
+                                display: block;   
+                                // color:$secondary;                           
+                                padding: 12px 25px;
+                                
+                                &:hover {
+                                    color: #252525;
+                                }
+                            }
+                        }
+
+                        ul {
+                            left: 100%;
+                            top: 0;
+                        }
+                    }
+                    &:hover{
+                        >a{
+                            &::after, &::before{
+                                width: 100%;
+                            }
+                            
+                        }
+                        ul{
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translateY(20px);
+                            >li{
+                                >a{
+                                    &::after, &::before{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ---------------------------------
+   Mobile Menu Style 
+------------------------------------*/
+.mobile-nav {
+    position: fixed;
+    right: -380px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    transition: right .5s ease-in;
+    background-color:$primary;
+    padding: 20px;
+    z-index: 9999999;
+    box-shadow: 0 13px 35px -12px rgba(35,35,35,.15);
+
+    &.show {
+        right: 0px;
+    }
+
+    .close-nav {
+      border: 0;
+      background: transparent;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 20px;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+    }
+
+    /* Vertical Menu Style */
+
+    .sidebar-nav {
+        margin-top: 30px;
+    }
+    .sidebar-nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: transparent;
+    }
+    .sidebar-nav ul li{
+        display: block !important;
+    }
+    .sidebar-nav .metismenu {
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar-nav .metismenu>li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar-nav .metismenu a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        transition: all .3s ease-out;
+        text-decoration: none;
+        color: #fff;
+        outline-width: 0;
+        text-transform: capitalize;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .sidebar-nav .metismenu ul a {
+        padding: 10px 15px 10px 35px;
+        position: relative;
+        &::before {
+            clear: both;
+            display: block;
+            content: "\f067";
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        &:hover {
+            padding-left: 40px;
+            &::before {
+                background-color: #fff;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            content: "";
+            top: 50%;
+            transition: all .3s ease-in-out;
+            transform: translateY(-50%);
+        }
+    }
+    .sidebar-nav .metismenu ul ul {
+        list-style-type: circle !important;
+    }
+    .sidebar-nav .metismenu ul ul a {
+        padding: 10px 15px 10px 45px;        
+    }
+    .metismenu .has-arrow {
+        // background: $theme-dark;
+    }
+
+    .sidebar-nav .metismenu a:hover,
+    .sidebar-nav .metismenu a:focus,
+    .sidebar-nav .metismenu a:active {
+        text-decoration: none;
+        color: #fff;
+        // background: $theme-dark;
+    }
+    .metismenu .has-arrow::after {
+        position: absolute;
+        content: '';
+        width: 0.5em;
+        height: 0.5em;
+        border-width: 1px 0 0 1px;
+        border-style: solid;
+        border-color: initial;
+        right: 1em;
+        transform: rotate(-45deg) translate(0, -50%);
+        transform-origin: top;
+        top: 50%;
+        transition: all .3s ease-out;
+    }
+    .metismenu .active > .has-arrow::after, .metismenu .has-arrow[aria-expanded="true"]::after {
+        transform: rotate(-135deg) translate(0, -50%);
+    }
+
+}
+
+
+#hamburger {
+    padding-left: 20px;
+    color: $primary;
+    font-size: 36px;
+    line-height: 1;
+    text-align: right;
+    font-weight: 700;
+    display: none;
+    @media (max-width:1200px) {
+        display: block !important;
+    }
+    i {
+        cursor: pointer;
+    }
+}
+
+
+#scrollUp{
+    background-color: $primary;
+    @include transition(0.4s);
+    &:hover{
+        background-color: $secondary;
+        color: $white;
+    }
+}

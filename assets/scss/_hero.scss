@@ -1,0 +1,110 @@
+/* ----------------------------------
+	HERO SECTION STYLEING
+ ------------------------------------ */
+
+ .hero-wrapper{
+    &.hero-1{
+
+    }
+    .single-hero-slider{
+        position: relative;
+        padding: 150px 0px;
+        @media (max-width:992px) {
+            padding: 100px 0px;
+        }
+        @media (max-width:768px) {
+            padding: 80px 0px;
+        }
+        @include overlay(#000 , 0.45);
+        .hero-content{
+            h6{
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 34px;
+                color: #FFFFFF;
+                margin-bottom: 20px;
+                @media (max-width:578px) {
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+            h1{
+                font-weight: 500;
+                font-size: 85px;
+                line-height: 95px;
+                color: #FFFFFF;
+                margin-bottom: 50px;
+                @media (max-width:992px) {
+                    font-size: 65px;
+                    line-height: 75px;
+                }
+                @media (max-width:768px) {
+                    font-size: 50px;
+                    line-height: 65px;
+                }
+                @media (max-width:578px) {
+                    font-size: 45px;
+                    line-height: 55px;
+                    text-align: center;
+                }
+            }
+           .hero-link{
+            display: flex;
+            gap: 30px;
+            @media (max-width:420px) {
+                text-align: center !important;
+                display: block !important;
+            }
+            @media (max-width:578px) {
+                justify-content: center;
+            }
+            a{
+                &:last-child{
+                    @media (max-width:420px) {
+                        justify-content: center;
+                        margin-top: 30px;
+                    }
+                    i{
+                        font-size: 26px;
+                        color: #FFFFFF;
+                        transform: rotate(10deg);
+                    }
+                    span{
+                        text-align: left !important;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 26px;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+           }
+        }
+    }
+ }
+
+ .owl-dots{
+    position: absolute;
+    top: calc(40% + 20px);
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    @media (max-width:578px) {
+        display: none !important;
+    }
+    .owl-dot{
+        width: 25px;
+        height: 25px;
+        border-radius: 500px;
+        background-color: #D9D9D9 !important;
+        &.active{
+            width: 30px;
+            height: 30px;
+            background-color: $secondary !important;
+        }
+    }
+ }

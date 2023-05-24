@@ -1,0 +1,102 @@
+/* ------------------------------------------------------------------
+    Template All Variables Defined - Value Change with Your's Need
+ -------------------------------------------------------------------- */
+
+$white:#FFFfff;
+$gray:#f4f7fd;
+$red: #FF8888;
+$base: #1085A9;
+$black:#000;
+$blue: #01A0E1;
+$pink: #FF681B;
+$info: #FAA21A;
+$green: #3FAD48;
+
+
+// Theme Color - Defualt Colors
+$primary: #233152;
+$secondary: #E94D4E;
+$text:#233152;
+$text-2:#536184;
+
+
+
+@mixin border-radius($r) {
+    -webkit-border-radius: $r;
+    -moz-border-radius: $r;
+    -ms-border-radius: $r;
+    border-radius: $r;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: all $transition ease-in-out;
+    -moz-transition: all $transition ease-in-out;
+    -ms-transition: all $transition ease-in-out;
+    -o-transition: all $transition ease-in-out;
+    transition: all $transition ease-in-out;
+}
+@mixin borderight{
+    &::after{
+        position: absolute;
+        clear: both;
+        display: block;
+        content: '';
+        width: 1px;
+        height: 80px;
+        background-color: rgba(247, 242, 236, 0.2);
+        right: 0%;
+        top: -20px;
+        z-index: 5;
+    }
+}
+@mixin border {
+    &::after{
+        position: absolute;
+        clear: both;
+        display: block;
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: rgb(247, 242, 236);
+        transform: rotate(15deg);
+        right: 0%;
+        top: 0%;
+        z-index: 5;
+    }
+}
+@mixin overlay($color, $opacity) {
+    z-index: 1;
+    position: relative;
+
+    &:before {
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        background: rgba($color, $opacity);
+        @include transition(all 0.3s ease);
+    }
+}
+
+@mixin absolute($z-index) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: $z-index;
+}
+
+@mixin before($zindex) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: $zindex;
+}
